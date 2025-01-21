@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-// const API_URL = 'http://localhost:8080';
+ const API_URL = 'https://back-trood.onrender.com';
 
 export const api = axios.create({
-	baseURL: '/api',
+	baseURL: API_URL || '/api',
 	headers: {
 		'Content-Type': 'application/json'
 	}
