@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const SideBar: React.FC = () => (
-	<aside className='w-64 p-4 flex flex-col justify-between bg-gray-100 h-full'>
+	<aside className='w-64 p-4 flex flex-col justify-between h-full'>
 		<ul className='space-y-4'>
 			<li>
 				<NavLink
