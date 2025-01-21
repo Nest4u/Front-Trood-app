@@ -16,7 +16,7 @@ const SideBar: React.FC = () => (
 			</li>
 			<li>
 				<NavLink
-					to='/projects'
+					to='/'
 					className={({ isActive }) =>
 						`block p-2 rounded-xl ${isActive ? 'bg-gray-300 font-bold' : 'hover:bg-gray-300'}`
 					}
@@ -26,7 +26,7 @@ const SideBar: React.FC = () => (
 			</li>
 			<li>
 				<NavLink
-					to='/vacancies'
+					to='/'
 					className={({ isActive }) =>
 						`block p-2 rounded-xl ${isActive ? 'bg-gray-300 font-bold' : 'hover:bg-gray-300'}`
 					}
@@ -36,7 +36,7 @@ const SideBar: React.FC = () => (
 			</li>
 			<li>
 				<NavLink
-					to='/people'
+					to='/'
 					className={({ isActive }) =>
 						`block p-2 rounded-xl ${isActive ? 'bg-gray-300 font-bold' : 'hover:bg-gray-300'}`
 					}
@@ -46,7 +46,7 @@ const SideBar: React.FC = () => (
 			</li>
 			<li>
 				<NavLink
-					to='/tests'
+					to='/'
 					className={({ isActive }) =>
 						`block p-2 rounded-xl ${isActive ? 'bg-gray-300 font-bold' : 'hover:bg-gray-300'}`
 					}
@@ -56,7 +56,7 @@ const SideBar: React.FC = () => (
 			</li>
 			<li>
 				<NavLink
-					to='/settings'
+					to='/'
 					className={({ isActive }) =>
 						`block p-2 rounded-xl ${isActive ? 'bg-gray-300 font-bold' : 'hover:bg-gray-300'}`
 					}
