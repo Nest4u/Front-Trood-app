@@ -18,7 +18,17 @@ This is a simple React application for managing projects. Users can create, edit
 - Install [Node.js](https://nodejs.org/) (14.x or later).
 - Ensure you have npm or yarn installed.
 
-### Steps
+This repository contains the codebase for a Project Management Application. The application is divided into two parts:
+
+1. **Frontend**: Built with React, TypeScript, and TailwindCSS.
+2. **Backend**: REST API that manages the application data.
+
+To run the application successfully, follow the instructions provided in the respective README files for the frontend and backend.
+
+## Steps to Set Up the Application
+1. **Set up the Frontend:**
+   - Navigate to the frontend directory.
+   - Follow the instructions in the frontend `README.md` file to install dependencies, configure the environment, and start the frontend server.
 1. Clone the repository:
    ```bash
    git clone https://github.com/Nest4u/Trood-Front.git
@@ -35,6 +45,19 @@ This is a simple React application for managing projects. Users can create, edit
    ```bash
    npm run dev
    ```
+
+
+
+
+
+2. **Set up the Backend:**
+   - Navigate to the backend directory.
+   - Follow the instructions in the backend `README.md` file to install dependencies, configure the environment, and start the backend server.
+
+
+
+
+
 
 
 
