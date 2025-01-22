@@ -17,21 +17,22 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ onEdit }) => {
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
 	const [currentDate] = useState(new Date())
-	useEffect(() => {
+	
+        useEffect(() => {
 		const fetchProjects = async () => {
-			try {
-				const data = await projectsApi.getProjects()
-				setProjects(data)
-			} catch (err) {
-				setError('Failed to fetch projects')
-			} finally {
-				setLoading(false)
-			}
-		}
-
-		fetchProjects()
-	}, [])
-
+		  try {
+			const response = await projectsApi.getProjects();
+			setProjects(response.data);
+			localStorage.setItem('projects', JSON.stringify(response.data));
+		  } catch (error) {
+			setError('Failed to fetch projects')
+		  }
+		  finally {
+			setLoading(false)
+		  }
+		};
+		fetchProjects();
+	  }, []);
 	if (loading) return <div>Loading...</div>
 	if (error) return <div>{error}</div>
 	const activeProjects = projects.filter(project => new Date(project.deadline) >= currentDate)
