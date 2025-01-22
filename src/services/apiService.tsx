@@ -1,10 +1,6 @@
 import axios from 'axios'
 
-
-const API_URL =
-  import.meta.env.MODE === 'development'
-    ? '/api' 
-    : import.meta.env.VITE_API_URL || '/api';
+const API_URL = import.meta.env.MODE === 'development' ? '/api' : import.meta.env.VITE_API_URL
 
 export const api = axios.create({
 	baseURL: API_URL,
@@ -15,23 +11,12 @@ export const api = axios.create({
 
 export const projectsApi = {
 	getProjects: async () => {
-		try {
-			const response = await api.get('/projects?populate=*')
-
-			return response.data
-		} catch (error) {
-			console.error('Error fetching projects:', error)
-			throw error
-		}
+		const response = await api.get('/projects?populate=*')
+		return response.data
 	},
 	createProject: async (project: { name: string; description: string; deadline: string }) => {
-		try {
-			const response = await api.post('/projects', project)
-			return response.data
-		} catch (error) {
-			console.error('Error creating project:', error)
-			throw error
-		}
+		const response = await api.post('/projects', project)
+		return response.data
 	},
 	getProjectById: async (id: number) => {
 		const response = await api.get(`/projects/${id}`)
@@ -41,20 +26,10 @@ export const projectsApi = {
 		id: number,
 		project: { name: string; description: string; deadline: string }
 	) => {
-		try {
-			const response = await api.put(`/projects/${id}`, project)
-			return response.data
-		} catch (error) {
-			console.error('Error updating project:', error)
-			throw error
-		}
+		const response = await api.put(`/projects/${id}`, project)
+		return response.data
 	},
 	deleteProject: async (id: number) => {
-		try {
-			await api.delete(`/projects/${id}`)
-		} catch (error) {
-			console.error('Error deleting project:', error)
-			throw error
-		}
+		await api.delete(`/projects/${id}`)
 	}
 }

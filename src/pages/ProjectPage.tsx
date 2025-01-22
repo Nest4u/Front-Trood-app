@@ -1,9 +1,9 @@
 import Header from '../components/Header'
 import SideBar from '../components/SideBar'
-import ProjectsList from '../hooks/ProjectsList'
-import CreateProjectForm from '../components/CreateProjectForm'
+import ProjectsList from '../components/project/ProjectsList'
+import CreateProjectForm from '../components/project/CreateProjectForm'
 import { useState } from 'react'
-import EditProjectForm from '../components/EditComponent'
+import EditProjectForm from '../components/project/EditComponent'
 
 function ProjectPage() {
 	const [showForm, setShowForm] = useState(false)
@@ -32,7 +32,12 @@ function ProjectPage() {
 						)}
 					</div>
 
-					{showForm && <CreateProjectForm onClose={() => setShowForm(false)} />}
+					{showForm && (
+						<CreateProjectForm
+							onClose={() => setShowForm(false)}
+							onUpdate={handleUpdate}
+						/>
+					)}
 					{editProjectId && (
 						<EditProjectForm
 							projectId={editProjectId}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { projectsApi } from '../services/apiService'
+import { projectsApi } from '../../services/apiService'
 import ProjectCard from './ProjectCard'
 
 interface Project {
@@ -17,8 +17,8 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ onEdit }) => {
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
 	const [currentDate] = useState(new Date())
-	
-       useEffect(() => {
+
+	useEffect(() => {
 		const fetchProjects = async () => {
 			try {
 				const data = await projectsApi.getProjects()
